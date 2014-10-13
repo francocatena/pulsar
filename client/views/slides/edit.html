@@ -6,6 +6,10 @@
       {{> afQuickField name='content' rows='10'}}
     </fieldset>
 
-    <button type="submit" class="btn btn-primary">{{_ 'slide_update'}}</button>
+    <button type="submit" class="btn btn-primary pull-left">{{_ 'slide_update'}}</button>
   {{/autoForm}}
+
+  <div class="pull-right">
+    <a href="{{pathFor 'slide'}}">{{_ 'show'}}</a>
+  </div>
 </template>

@@ -1,0 +1,11 @@
+<template name="slideNew">
+  {{#autoForm collection='Slides' id='newSlideForm' type='method' meteormethod='createSlide'}}
+    <fieldset>
+      {{> afQuickField name='title' autofocus=true}}
+      {{> afQuickField name='number'}}
+      {{> afQuickField name='content' rows='10'}}
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">{{_ 'slide_create'}}</button>
+  {{/autoForm}}
+</template>

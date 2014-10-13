@@ -1,0 +1,17 @@
+<template name="slides">
+  {{#if slides.count}}
+    <ul>
+      {{#each slides}}
+        <li>
+          {{number}} - {{title}} |
+          <a href="{{pathFor 'slide'}}">{{_ 'show'}}</a> |
+          <a href="{{pathFor 'slideEdit'}}">{{_ 'edit'}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    {{> emptySlides}}
+  {{/if}}
+
+  <a href="{{pathFor 'slideNew'}}" class="btn btn-primary">{{_ 'slide_new'}}</a>
+</template>

@@ -1,5 +1,7 @@
 <template name="layout">
-  <div class="container">
+  {{> menu}}
+
+  <div class="container" aria-live="assertive">
     {{> yield}}
   </div>
 </template>

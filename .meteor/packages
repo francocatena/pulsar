@@ -13,4 +13,5 @@ ian:accounts-ui-bootstrap-3
 accounts-password
 aldeed:autoform
 tap:i18n
+reactive-var
 

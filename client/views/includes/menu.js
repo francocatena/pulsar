@@ -17,3 +17,17 @@ Template.menu.helpers({
     return Meteor.user() && inSlide
   }
 })
+
+Template.menu.events({
+  'click a': function () {
+    $('.navbar-fixed-top .navbar-collapse.in').collapse('hide')
+  },
+
+  'click [data-logout]': function (event, template) {
+    event.preventDefault()
+
+    Meteor.logout(function () {
+      Router.go('root')
+    })
+  }
+})

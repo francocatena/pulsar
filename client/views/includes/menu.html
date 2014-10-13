@@ -1,26 +1,31 @@
 <template name="menu">
   {{#unless hide}}
     <div class="navbar navbar-default" role="navigation">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="{{pathFor 'root'}}">{{_ 'app_name'}}</a>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse">
-        {{#if currentUser}}
-          <ul class="nav navbar-nav">
-            <li class="{{activeRouteClass 'slides' 'slide'}}">
-              <a href="{{pathFor 'slides'}}">{{_ 'slides'}}</a>
-            </li>
-          </ul>
-        {{/if}}
-        <ul class="nav navbar-nav navbar-right">
-          {{> loginButtons }}
-        </ul>
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{pathFor 'root'}}">{{_ 'app_name'}}</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          {{#if currentUser}}
+            <ul class="nav navbar-nav">
+              <li class="{{activeRouteClass 'slides' 'slide'}}">
+                <a href="{{pathFor 'slides'}}">{{_ 'slides'}}</a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="#" data-logout>{{_ 'logout'}}</a>
+              </li>
+            </ul>
+          {{/if}}
+        </div>
       </div>
     </div>
   {{/unless}}

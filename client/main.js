@@ -5,8 +5,6 @@ Meteor.startup(function () {
     languageLoaded.set(true)
     loadSimpleSchemaMessages()
   })
-
-  accountsUIBootstrap3.setLanguage('es')
 })
 
 Template.registerHelper('setDocumentTitle', function (title) {

@@ -9,9 +9,7 @@ mizzao:bootstrap-3
 iron:router
 sacha:spin
 aldeed:collection2
-ian:accounts-ui-bootstrap-3
 accounts-password
 aldeed:autoform
 tap:i18n
 reactive-var
-

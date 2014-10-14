@@ -1,3 +1,3 @@
 Meteor.publish('slides', function () {
-  return Slides.find({ userId: this.userId }, { sort: { number: 1 } })
+  return Slides.find({}, { sort: { number: 1 } })
 })

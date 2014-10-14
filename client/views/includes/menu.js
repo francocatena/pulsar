@@ -14,7 +14,7 @@ Template.menu.helpers({
   hide: function () {
     var inSlide = Router.current() && Router.current().route.name === 'slide'
 
-    return Meteor.user() && inSlide
+    return inSlide
   }
 })
 

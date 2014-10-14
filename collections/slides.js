@@ -8,7 +8,6 @@ Slides.allow({
 
 Meteor.methods({
   createSlide: function (doc) {
-    doc._id = Random.id()
     doc.userId = this.userId
 
     Slides.insert(doc)

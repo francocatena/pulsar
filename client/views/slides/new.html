@@ -2,7 +2,7 @@
   {{#autoForm collection='Slides' id='newSlideForm' type='method' meteormethod='createSlide'}}
     <fieldset>
       {{> afQuickField name='title' autofocus=true}}
-      {{> afQuickField name='number'}}
+      {{> afQuickField name='number' value=nextNumber}}
       {{> afQuickField name='content' rows='10'}}
     </fieldset>
 

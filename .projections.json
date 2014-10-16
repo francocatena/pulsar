@@ -10,6 +10,10 @@
   "client/lib/*.js": {
     "type": "javascript"
   },
+  "client/stylesheets/main.css": {
+    "type": "stylesheet",
+    "alternate": "client/main.html"
+  },
   "client/stylesheets/*": {
     "type": "stylesheet"
   },

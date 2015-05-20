@@ -1,9 +1,9 @@
 <template name="slideEdit">
-  {{#autoForm collection='Slides' id='editSlideForm' type='method' meteormethod='updateSlide' doc=..}}
+  {{#autoForm collection='Slides' id='editSlideForm' type='method-update' meteormethod='updateSlide' doc=..}}
     <fieldset>
-      {{> afQuickField name='title' autofocus=true}}
+      {{> afQuickField name='title'}}
       {{> afQuickField name='number'}}
-      {{> afQuickField name='content' rows='10'}}
+      {{> afQuickField name='content'}}
     </fieldset>
 
     <button type="submit" class="btn btn-primary pull-left">{{_ 'slide_update'}}</button>

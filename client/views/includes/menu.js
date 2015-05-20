@@ -1,20 +1,16 @@
 Template.menu.helpers({
   activeRouteClass: function () {
-    var args = Array.prototype.slice.call(arguments)
-
-    args.pop() // Hash added by Spacebars
+    var args =  _.chain(arguments).toArray().initial().value()
 
     var active = _.any(args, function (name) {
-      return Router.current() && Router.current().route.name === name
+      return Router.current() && Router.current().route.getName() === name
     })
 
     return active && 'active'
   },
 
   hide: function () {
-    var inSlide = Router.current() && Router.current().route.name === 'slide'
-
-    return inSlide
+    return Router.current() && Router.current().route.getName() === 'slide'
   }
 })
 

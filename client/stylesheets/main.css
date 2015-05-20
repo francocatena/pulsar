@@ -1,3 +1,14 @@
 .code {
-  font-size: 3em;
+  background: rgba(245, 245, 245, 0.75);
+  font-size: 2.5em;
+  padding: .25em .5em;
+  border-radius: .5em;
+}
+
+.text-normal {
+  color: inherit;
+}
+
+.text-normal:hover {
+  color: inherit;
 }

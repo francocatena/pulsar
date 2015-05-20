@@ -1,6 +1,6 @@
 {
   "client/main.html": {
-    "type": "view",
+    "type": "template",
     "alternate": "client/main.js"
   },
   "client/main.js": {
@@ -18,7 +18,7 @@
     "type": "stylesheet"
   },
   "client/views/*.html": {
-    "type": "view",
+    "type": "template",
     "alternate": "client/views/{}.js",
     "template": "<template name=\"{underscore|camelcase}\">\n\n</template>"
   },
@@ -30,44 +30,65 @@
       "Template.{underscore|camelcase}.events({open}\n{close})"
     ]
   },
-  "collections/*.js": {
+  "i18n/*.i18n.json": {
+    "type": "locale",
+    "template": "{open}\n{close}"
+  },
+  "lib/collections/*.js": {
     "type": "collection",
-    "alternate": "collections/schemas/{}.js",
+    "alternate": "lib/collections/schemas/{singular}.js",
     "template": [
       "{camelcase} = new Mongo.Collection('{}')\n",
       "{camelcase}.attachSchema(Schemas.{singular|camelcase})"
     ]
   },
-  "collections/lib/schemas.js": {
+  "lib/collections/lib/schemas.js": {
     "type": "schema",
     "template": [
       "Schemas = {open}{close}\n",
       "Schemas.Base = new SimpleSchema({open}\n{close})"
     ]
   },
-  "collections/schemas/*.js": {
+  "lib/collections/schemas/*.js": {
     "type": "schema",
-    "alternate": "collections/{}.js",
+    "alternate": "lib/collections/{plural}.js",
     "template": [
       "Schemas.{singular|camelcase} = new SimpleSchema([Schemas.Base, {open}\n{close}])",
     ]
-  },
-  "i18n/*.i18n.json": {
-    "type": "locale",
-    "template": "{open}\n{close}"
   },
   "lib/router/controllers/*.js": {
     "type": "controller",
     "template": [
       "{camelcase}Controller = RouteController.extend({open}",
-      "  data: function () {open} return {open} {}: {camelcase}.find() {close} {close}",
+      "  data: function () {open}",
+      "    return {open} {}: {camelcase}.find() {close}",
+      "  {close}",
+      "{close})\n",
+      "{singular|camelcase}Controller = RouteController.extend({open}",
+      "  data: function () {open}",
+      "    return {camelcase}.findOne(this.params._id)",
+      "  {close}",
       "{close})"
     ]
   },
-  "lib/router/maps.js": {
+  "lib/router/config.js": {
     "type": "route"
   },
-  "lib/router/*.js": {
-    "type": "route"
+  "lib/router/routes/*.js": {
+    "type": "route",
+    "template": [
+      "Router.route('/{}', {open} name: '{}' {close})",
+      "Router.route('/{}/new', {open} name: '{singular}New' {close})",
+      "Router.route('/{}/:_id', {open} name: '{singular}' {close})",
+      "Router.route('/{}/:_id/edit', {open} name: '{singular}Edit', controller: '{singular|camelcase}Controller' {close})",
+    ]
+  },
+  "server/publications/*.js": {
+    "type": "publication",
+    "template": [
+      "Meteor.publish('{}', function () {open}",
+      "  return {camelcase}.find({open} userId: this.userId {close})",
+      "{close})"
+    ]
   }
 }

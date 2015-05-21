@@ -1,5 +1,5 @@
 Template.layout.onCreated(function () {
-  $(document).on('keyup click', function (event) {
+  $(document).on('keyup click touchstart', function (event) {
     var router   = Router.current()
     var slideId  = router && router.params._id
     var which    = event.which
@@ -7,7 +7,7 @@ Template.layout.onCreated(function () {
 
     var keyboardNext = _.contains([39, 34, 40, 13], which)
     var keyboardPrev = _.contains([37, 33, 38, 8],  which)
-    var mouseNext    = type === 'click'
+    var mouseNext    = type === 'click' || type === 'touchstart'
 
     if (router && router.route.getName() !== 'slide') return
 

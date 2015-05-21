@@ -4,6 +4,8 @@
   "updated_at": "Last update",
   "edit": "Edit",
   "show": "Show",
+  "delete": "Delete",
+  "confirm": "Are you sure?",
   "login_email": "Email",
   "login_password": "Password",
   "login_submit": "Login",

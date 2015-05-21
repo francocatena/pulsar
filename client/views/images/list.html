@@ -5,7 +5,7 @@
       <thead>
         <tr>
           <th>{{_ 'image_name'}}</th>
-          <th>
+          <th colspan="2">
             <a href="{{pathFor 'imageNew'}}" class="btn btn-default btn-xs">
               {{_ 'image_new'}}
             </a>
@@ -17,6 +17,7 @@
           <tr>
             <td><a href="{{pathFor 'image'}}">{{name}}</a></td>
             <td><a href="{{pathFor 'imageEdit'}}">{{_ 'edit'}}</a></td>
+            <td><a href="#" data-delete>{{_ 'delete'}}</a></td>
           </tr>
         {{/each}}
       </tbody>

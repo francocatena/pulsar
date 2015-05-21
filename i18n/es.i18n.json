@@ -4,6 +4,8 @@
   "updated_at": "Última modificación",
   "edit": "Editar",
   "show": "Ver",
+  "delete": "Eliminar",
+  "confirm": "¿Está seguro?",
   "login_email": "Correo",
   "login_password": "Contraseña",
   "login_submit": "Ingresar",

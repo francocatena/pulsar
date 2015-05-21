@@ -1,14 +1,31 @@
 <template name="slides">
   {{#if slides.count}}
-    <ul>
-      {{#each slides}}
-        <li>
-          {{number}} - {{title}} |
-          <a href="{{pathFor 'slide'}}">{{_ 'show'}}</a> |
-          <a href="{{pathFor 'slideEdit'}}">{{_ 'edit'}}</a>
-        </li>
-      {{/each}}
-    </ul>
+    <table class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>{{_ 'slide_number'}}</th>
+          <th>{{_ 'slide_title'}}</th>
+          <th>
+            <a href="{{pathFor 'slideNew'}}" class="btn btn-xs btn-default">{{_ 'slide_new'}}</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each slides}}
+          <tr>
+            <td>
+              <a href="{{pathFor 'slide'}}">{{number}}</a>
+            </td>
+            <td>
+              <a href="{{pathFor 'slide'}}">{{title}}</a>
+            </td>
+            <td>
+              <a href="{{pathFor 'slideEdit'}}">{{_ 'edit'}}</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
   {{else}}
     {{> emptySlides}}
   {{/if}}

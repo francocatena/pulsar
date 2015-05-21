@@ -1,0 +1,10 @@
+<template name="imageNew">
+  {{#autoForm collection='Images' id='newImageForm' type='method' meteormethod='createImage'}}
+    <fieldset>
+      {{> afQuickField name='name'}}
+      {{> afQuickField name='imageId'}}
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">{{_ 'image_create'}}</button>
+  {{/autoForm}}
+</template>

@@ -1,0 +1,13 @@
+<template name="imageEdit">
+  {{#autoForm collection='Images' id='editImageForm' type='method-update' meteormethod='updateImage' doc=..}}
+    <fieldset>
+      {{> afQuickField name='name'}}
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary pull-left">{{_ 'image_update'}}</button>
+  {{/autoForm}}
+
+  <div class="pull-right">
+    <a href="{{pathFor 'image'}}">{{_ 'show'}}</a>
+  </div>
+</template>

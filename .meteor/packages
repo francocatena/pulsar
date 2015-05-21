@@ -13,3 +13,6 @@ aldeed:autoform
 tap:i18n
 reactive-var
 twbs:bootstrap
+cfs:standard-packages
+cfs:gridfs
+cfs:autoform

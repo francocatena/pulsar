@@ -1,0 +1,29 @@
+<template name="images">
+
+  {{#if images.count}}
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>{{_ 'image_name'}}</th>
+          <th>
+            <a href="{{pathFor 'imageNew'}}" class="btn btn-default btn-xs">
+              {{_ 'image_new'}}
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each images}}
+          <tr>
+            <td><a href="{{pathFor 'image'}}">{{name}}</a></td>
+            <td><a href="{{pathFor 'imageEdit'}}">{{_ 'edit'}}</a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    {{> emptyImages}}
+  {{/if}}
+
+  <a href="{{pathFor 'imageNew'}}" class="btn btn-primary">{{_ 'image_new'}}</a>
+</template>

@@ -6,6 +6,7 @@ Template.layout.onCreated(function () {
     var nextKeys = [39, 34, 40, 13]
     var prevKeys = [37, 33, 38, 8]
 
+    if (! Meteor.user()) return
     if (router && router.route.getName() !== 'slide') return
 
     if (_.contains(nextKeys, key))

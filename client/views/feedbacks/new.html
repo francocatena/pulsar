@@ -1,0 +1,18 @@
+<template name="feedbackNew">
+  {{#if showThanks}}
+    {{> feedbackThanks}}
+  {{else}}
+    {{> _feedbackNew}}
+  {{/if}}
+</template>
+
+<template name="_feedbackNew">
+  {{#autoForm collection='Feedbacks' id='newFeedbackForm' type='method' meteormethod='createFeedback'}}
+    <fieldset>
+      {{> afQuickField name='score'}}
+      {{> afQuickField name='comment'}}
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">{{_ 'feedback_create'}}</button>
+  {{/autoForm}}
+</template>

@@ -1,3 +1,3 @@
 Meteor.publish('feedbacks', function () {
-  return this.userId ? Feedbacks.find() : Feedbacks.find({ false: false })
+  return this.userId ? Feedbacks.find() : this.ready()
 })

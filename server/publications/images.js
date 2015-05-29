@@ -1,3 +1,3 @@
 Meteor.publish('images', function () {
-  return Images.find()
+  return this.userId ? Images.find() : this.ready()
 })

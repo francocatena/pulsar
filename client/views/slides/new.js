@@ -7,7 +7,13 @@ Template.slideNew.helpers({
 AutoForm.addHooks('newSlideForm', {
   before: {
     method: function (doc, template) {
-      return _.extend(doc, { _id: Random.id() })
+      _.extend(doc, { _id: Random.id() })
+
+      setTimeout(function () {
+        Router.go('slide', doc)
+      }, 100)
+
+      return doc
     }
   }
 })

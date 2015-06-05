@@ -9,9 +9,10 @@ AutoForm.addHooks('newSlideForm', {
     method: function (doc, template) {
       _.extend(doc, { _id: Random.id() })
 
-      setTimeout(function () {
-        Router.go('slide', doc)
-      }, 100)
+      if (AutoForm.validateForm('newSlideForm'))
+        setTimeout(function () {
+          Router.go('slide', doc)
+        }, 100)
 
       return doc
     }
